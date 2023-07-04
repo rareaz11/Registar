@@ -108,18 +108,58 @@ namespace Registar
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
+
+            SqlConnection con = new SqlConnection("Data Source=antonio\\azelic;Initial Catalog=Registracija;Integrated Security=True;Encrypt=False");
+            SqlDataAdapter adapter = new SqlDataAdapter("Select regBroj from Reg", con);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+
+            foreach (DataRow item in dt.Rows)
+            {
+
+                 int n = dataGridView1.Rows.Add();
+                 dataGridView1.Rows[n].Cells[1].Value = item[0].ToString();
+                 
             
 
-            
-            
+            }
+
+
+            for(int i = 0; i < novo.Count; i++) 
+            {
+
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = novo[i].ToString();
+
+
+
+            }
+
+            for(int i = 0; i < dontCome.Count; i++) 
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[2].Value = dontCome[i].ToString();
+            }
+
+            for (int i = 0; i < notOnFarm.Count; i++)
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[3].Value = notOnFarm[i].ToString();
+            }
+
+
+
+
+
             // sluzi za testiranje
             //novo.Add("127474747474747");
             //novo.Add("127474747475115");
             //novo.Add("127474747474888");
             //novo.Add("657483910987653");
             //novo.Add("372937492839384");
-          
+
             //novo.Add("127474747474747");
             //novo.Add("127474747474747");
             //novo.Add("127474747474747");
@@ -128,15 +168,15 @@ namespace Registar
             //novo.Add("127474747474747");
             //novo.Add("127474747474747");
             //novo.Add("127474747474747");
-            
-       
+
+
             //    for (int i = 0; i < list.Count; i++)
             //    {
 
             //        if (novo.Contains(list[i]))
             //        {
-                       
-                       
+
+
             //            int g = dataGridView1.Rows[i].Cells[0].RowIndex;
             //            dataGridView1.Rows[g].Cells[0].Value = list[i].ToString();
             //           dataGridView1.Columns[0].DefaultCellStyle.BackColor = Color.Green;
@@ -149,38 +189,45 @@ namespace Registar
             //        }
             //    }
 
-               
-
-            }
-
-          
 
 
-                    
+        }
 
 
-                
-            
+
+
+
+
+
+
+
 
         private void Reg_TextChanged(object sender, EventArgs e)
         {
             
             if (Reg.Text.Length == 15) 
             {
-               
-                
+                bool rez = Reg.Text.All(Char.IsDigit);
+                if (rez == false)
+                {
+                    MessageBox.Show("greska unosa: TEKST MORA SADRZAVATI SAMO BROJEVE");
+                }
+                else
+                {
+
                     if (list.Contains(Reg.Text))
                     {
-                        
-                    novo.Add(Reg.Text);
+
+                        novo.Add(Reg.Text);
 
 
-                }
-                else 
-                {
-                   
-                    notOnFarm.Add(Reg.Text);
+                    }
+                    else
+                    {
 
+                        notOnFarm.Add(Reg.Text);
+
+                    }
                 }
 
 
@@ -204,6 +251,8 @@ namespace Registar
         {
            this.Close();
         }
+
+    
     }
 }
 

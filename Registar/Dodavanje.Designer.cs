@@ -32,6 +32,7 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Reg = new System.Windows.Forms.TextBox();
             this.txt_reg = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -42,35 +43,48 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(301, 61);
+            this.Column3,
+            this.Column4});
+            this.dataGridView1.Location = new System.Drawing.Point(259, 33);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(474, 149);
+            this.dataGridView1.Size = new System.Drawing.Size(580, 278);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
             // 
-            this.Column1.HeaderText = "ID";
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "KOJE SU TRENUTNO PRISUTNE";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "RegBroj";
+            this.Column2.HeaderText = "U REGSTRU FARME";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.HeaderText = "NEPOZNATI";
+            this.Column3.HeaderText = "KOJE SU U REGISTRU A NISU TRENUTNO PRISUTNE";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "KOJE SU PRISUTNE A NEMA IH NA POPISU REGISTRA";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // Reg
             // 
@@ -94,7 +108,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Yellow;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(622, 231);
+            this.button1.Location = new System.Drawing.Point(47, 312);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(130, 37);
             this.button1.TabIndex = 3;
@@ -106,7 +120,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.LightGray;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button2.Location = new System.Drawing.Point(556, 293);
+            this.button2.Location = new System.Drawing.Point(434, 501);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(235, 36);
             this.button2.TabIndex = 4;
@@ -116,7 +130,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(622, 356);
+            this.button3.Location = new System.Drawing.Point(806, 501);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(137, 39);
             this.button3.TabIndex = 5;
@@ -129,7 +143,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
-            this.ClientSize = new System.Drawing.Size(812, 407);
+            this.ClientSize = new System.Drawing.Size(984, 561);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -153,9 +167,10 @@
         private Label txt_reg;
         private Button button1;
         private Button button2;
+        private Button button3;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
-        private Button button3;
+        private DataGridViewTextBoxColumn Column4;
     }
 }

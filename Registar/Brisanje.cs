@@ -88,8 +88,7 @@ namespace Registar
         private void button2_Click(object sender, EventArgs e)
         {
 
-            Start s=new Start();
-            s.Show();
+           
             this.Close();
         }
     }

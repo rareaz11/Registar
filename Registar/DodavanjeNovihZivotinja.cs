@@ -22,9 +22,9 @@ namespace Registar
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Start s=new Start();    
-            Close();
-            s.Show();
+           
+           this.Close();
+          
             
         }
 
@@ -92,5 +92,7 @@ namespace Registar
             }
             
         }
+
+      
     }
 }

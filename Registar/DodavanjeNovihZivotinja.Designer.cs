@@ -71,6 +71,7 @@
             this.Unos.Name = "Unos";
             this.Unos.Size = new System.Drawing.Size(150, 23);
             this.Unos.TabIndex = 3;
+          
             // 
             // button2
             // 
