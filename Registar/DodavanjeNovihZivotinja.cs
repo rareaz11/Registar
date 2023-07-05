@@ -73,17 +73,28 @@ namespace Registar
                         MessageBox.Show("Uspjesno");
                         SqlConnection con = new SqlConnection("Data Source=antonio\\azelic;Initial Catalog=Registracija;Integrated Security=True;Encrypt=False");
 
-
+                        DateOnly vrijeme1 = DateOnly.FromDateTime(DateTime.Now);
 
                         string cmdString = "";
                         con.Open();
 
                         cmdString = "insert into Reg(regBroj)" + " values(" + Unos.Text + ")";
 
+                     
+                       
+
+                        string cmdString1 = "insert into Updates(dodaniBroj,datum)" +
+                            "Values(" + Unos.Text + ",'" + vrijeme1 + "') ";
+                        MessageBox.Show(vrijeme1.ToString());
+
                         SqlCommand cmd = new SqlCommand(cmdString, con);
+                        SqlCommand cmd2 = new SqlCommand(cmdString1, con);
                         cmd.ExecuteNonQuery();
+                        cmd2.ExecuteNonQuery();
 
                         con.Close();
+
+                        
 
                         MessageBox.Show("Data Stored Successfully");
                     }

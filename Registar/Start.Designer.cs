@@ -33,6 +33,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -57,7 +58,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(339, 371);
+            this.button3.Location = new System.Drawing.Point(339, 458);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(186, 52);
             this.button3.TabIndex = 2;
@@ -87,11 +88,22 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(339, 377);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(186, 52);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "ARHIVA";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 661);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
@@ -113,5 +125,6 @@
         private Button button3;
         private Label label1;
         private Button button4;
+        private Button button5;
     }
 }

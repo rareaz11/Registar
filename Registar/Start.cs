@@ -44,5 +44,12 @@ namespace Registar
             Brisanje b= new Brisanje(); 
             b.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Arhiva a= new Arhiva(); 
+            a.Show();   
+           
+        }
     }
 }

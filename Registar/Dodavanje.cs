@@ -210,7 +210,7 @@ namespace Registar
                 bool rez = Reg.Text.All(Char.IsDigit);
                 if (rez == false)
                 {
-                    MessageBox.Show("greska unosa: TEKST MORA SADRZAVATI SAMO BROJEVE");
+                    goto b;
                 }
                 else
                 {
@@ -218,8 +218,15 @@ namespace Registar
                     if (list.Contains(Reg.Text))
                     {
 
+                        for (int i = 0; i < novo.Count; i++)
+                        {
+                            if (Reg.Text == novo[i])
+                            {
+                                goto b;
+                              
+                            }
+                        }
                         novo.Add(Reg.Text);
-
 
                     }
                     else
@@ -231,13 +238,13 @@ namespace Registar
                 }
 
 
-                
-             
+
+                b:
                 Reg.Clear();
             }
             else if (Reg.Text.Length > 15) 
             {
-                MessageBox.Show("Greska u pisanju : upisano " + Reg.Text.Length+ " znakova");
+               
                 Reg.Clear();
             }
             

@@ -56,16 +56,22 @@ namespace Registar
                     {
                         MessageBox.Show("Uspjesno");
                         SqlConnection con = new SqlConnection("Data Source=antonio\\azelic;Initial Catalog=Registracija;Integrated Security=True;Encrypt=False");
+                        
 
-
-
+                        DateTime vrijeme=DateTime.Now;
+                        DateOnly vrijeme1 = DateOnly.FromDateTime(DateTime.Now);
                         string cmdString = "";
                         con.Open();
 
                         cmdString = "delete from Reg where regBroj=" + Brisanje_txt.Text + ";";
+                        string cmdString1 = "insert into History(povjesniBroj,datum)" +
+                             "Values("+Brisanje_txt.Text + ",'"+vrijeme1+"') ";
+                        MessageBox.Show(vrijeme1.ToString());
 
                         SqlCommand cmd = new SqlCommand(cmdString, con);
+                        SqlCommand cmd2 = new SqlCommand(cmdString1, con);
                         cmd.ExecuteNonQuery();
+                        cmd2.ExecuteNonQuery();
 
                         con.Close();
 
